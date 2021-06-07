@@ -11,6 +11,7 @@ import NewCityform from './components/Weather/NewCityform';
 //CSS
 import './index.css';
 import 'bootswatch/dist/spacelab/bootstrap.min.css';
+import 'weather-icons/css/weather-icons.css';
 
 ReactDOM.render(
 	<React.StrictMode>
