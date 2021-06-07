@@ -5,7 +5,7 @@ IMPORTANTE: para este tutorial se debe haber cumplido con el PASOS BACKEND en la
 
 IMPORTANTE simbolo backtick `
     
-abrir otra consola en esta carpeta y correr el comando
+abrir otra consola en esta carpeta y correr el comando.
     npx create-react-app frontend --template typescript
 
 creamos un archivo .env con el puerto (que sea 100 + que el que usa el API, no tiene que ser asi pero asi no me confundo)
@@ -27,6 +27,7 @@ una vez funcionando se depura borrando archivos innecesarios:
         <h1>'Hello World'</h1>
 
 instalamos compomentes de REACT que necesitaremos aqui listo los mas basicos, en el archivo REACT.txt estan los componentes que mas use y su descripcion
+npm i react-router-dom --save-dev @types/react-router-dom axios @types/axios bootswatch
     npm i react-router-dom
     npm i --save-dev @types/react-router-dom
     npm i axios @types/axios para hacer peticiones al servidor
