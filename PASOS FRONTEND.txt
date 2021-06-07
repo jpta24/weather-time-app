@@ -1,0 +1,42 @@
+TODA LA EXPLICACION ESTA EN EL VIDEO de FAZT (frontend) 
+    https://www.youtube.com/watch?v=wOLo-B7mrZM
+
+IMPORTANTE: para este tutorial se debe haber cumplido con el PASOS BACKEND en la carpeta API
+
+IMPORTANTE simbolo backtick `
+    
+abrir otra consola en esta carpeta y correr el comando
+    npx create-react-app frontend --template typescript
+
+creamos un archivo .env con el puerto (que sea 100 + que el que usa el API, no tiene que ser asi pero asi no me confundo)
+    PORT=5100
+
+una vez creado podemos cerrarlo y arrastrarlo a VS, alli comprobamos que todo este listo haciendolo correr abriendo una tarminal y corriendo:
+    npm start
+
+una vez funcionando se depura borrando archivos innecesarios:
+    app.tsx
+    logo.svg
+    app.test.tsx
+    app.css
+    
+    en el index.css se limpia solo el contenido del archivos
+    en el index.tsx se elimina el llamado del 
+        import App from './App';
+    y el <App /> se cambia por un 
+        <h1>'Hello World'</h1>
+
+instalamos compomentes de REACT que necesitaremos aqui listo los mas basicos, en el archivo REACT.txt estan los componentes que mas use y su descripcion
+    npm i react-router-dom
+    npm i --save-dev @types/react-router-dom
+    npm i axios @types/axios para hacer peticiones al servidor
+    npm i bootswatch
+
+crear carpeta components y dentro de ella dos carpetas Navbar y Videos o (nombre relacionado a la app)
+
+en Videos creo un componente para llamar los videos iniciales (ya esto depende de la app)
+    se crea un VideoList.tsx y en el se crea un componente funcional con rafce
+
+llamo el componente en index.tsx desde su ubicacion  y con el nombre de exportacion
+    import VideoList from './components/Videos/VideoList';
+    

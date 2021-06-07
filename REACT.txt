@@ -1,0 +1,184 @@
+
+IMPORTANTE simbolo backtick `
+
+npm i react-router-dom
+npm i --save-dev @types/react-router-dom   para que react entienda el typescript
+    
+    para poder usar y generar rutas en nuetsra app
+    se impotan
+    
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+    
+    y se llama
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/" component={VideoList}/>
+                <Route exact path="/create-video" component={VideoForm}/>
+            </Switch>
+        </BrowserRouter>
+
+npm i axios @types/axios para hacer peticiones al servidor BD
+
+npm install --save react-toastify para notificaiones en pantalla
+    se importa en el index.tsx
+
+    import { ToastContainer, toast } from 'react-toastify';
+    import 'react-toastify/dist/ReactToastify.css';
+
+    se Usa con un container debajo del switch 
+    <ToastContainer />
+
+    en el archivo donde se vaya a definir la notificacion se importa solo el toast
+    import { toast } from 'react-toastify';
+    y se usa 
+    toast.success('Great')
+
+npm install react-player Reproductor de videos
+    import ReactPlayer from 'react-player'
+    <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
+
+useEffect(()=>{},[]) funcion para poder usar porcion de codigo cuando carga el componente
+    en {} se coloca la funcion que queremos realizar 
+    el [] si la variable que se escriba varia, se ejecuta de nuevo la funcion
+
+    este metodo no permite unsar async/await asi que debe generrar la funcion por fuera y dentro solo llamarla
+
+useState 
+    importarlo en {useState}
+    const [state, setstate] = useState(initialState)
+        state es la variable que quiero usar
+        setstate es donde voyaguardar los datos de esa variable state
+        initialState es de donde va a obtener esos datos, inicialmente se coloca on objeto vacio []
+
+        luego se usa la variable setState para asignar los datos a ese useState
+    
+    ej:
+    const [video, setVideo] = useState([])
+        setVideo(res.data)
+        de la respuesta res de axios obtener la data (VideoServices)
+    
+    luego se renderiza 
+    return (
+		<div>
+			{videos.map((video) => {
+				<div>
+					<h1>{video.title}</h1>
+				</div>;
+			})}
+		</div>
+	);
+
+useHistory
+    import { useHistory } from 'react-router'; para poder cambiar el enrutador
+
+    const history = useHistory()
+
+    history.push('/') a la direccion que queiro ir
+
+useParams 
+    import { useParams } from 'react-router'; para leer el params de la ruta /:id
+
+    const params = useParams()
+
+    params 
+
+
+
+interface 
+    es para declarar que tipo de datos se van a manejar en una variable (como un SCHEMA)
+    
+    Video.ts
+        export interface Video {
+            _id: string;
+            title: string;
+            description: string;
+            url: string;
+            createdAt: string | Date;
+            updatedAt: string | Date;
+        }
+
+    se debe declarar en un archivo por aparte y se llama en el componente que lo vayamos a usar
+    import {Video} from './Video'
+
+    cuando vayamos a usar el esquema debemos decir que el elemento
+        (video: Video)
+
+Services
+    es para señalar todas las funciones de solicitudes al Backend en un solo lugar
+
+    VideoServices.ts
+    import axios from 'axios';
+
+    export const getVideos = async () => {
+        return await axios.get('http://localhost:5000/videos');
+    };
+
+    y en el archivo que lo vayamos a usarse importa completo con 
+    import * as videoServices from './VideoServices'
+
+    y se llama su uso por 
+    const res = await videoServices.getVideos
+
+boostwatch
+    npm i bootswatch para estilizar
+    se importa 
+    import 'bootswatch/dist/pulse/boostrap.min.css'; al final eleguimos el que nos guste 
+
+    Cuando copiemos codigo desde boostwatch pasarlo por unconvertidor de codigo ej:
+    https://magic.reactjs.net/htmltojsx.htm
+
+    copiar desde nav a nav
+
+    y cambiar las etiquetas a por link 
+
+    import {Link} from 'react-router-dom'
+
+    <a por <Link
+    </a> por </Link>
+
+    y los href="#" por to="/"
+
+    quitar los botones que no vayamos a usar, cambiar el nombre en los que vayamos a usar
+
+    para ajustar hacia los extremos colocar 
+    <ul className='navbar-nav ml-auto'>
+
+    className
+        regla de boostrap
+            container
+                row
+                    col
+                    .col-md-4.offset-md-4 (columna con 4 y espaciado de 4 para que quede centrado)
+                        .card
+                            .card-body
+        
+        
+        <div className='form-group'> para darle un espaciado arriba y abajo para que no esten juntos
+
+        <input
+            className='form-control m-2' para darle un formato al input con un recuadro afuera
+        
+        className='d-flex justify-content-between'> para usar clases de flexbox y colocar espacio entre elementos
+        
+        inline Style 
+            style={{cursor:'pointer'}}
+
+        embed 
+            Para meter un video dentro de un espacio del parent
+
+
+
+type InputChange = ChangeEvent<HTMLInputElement | HTMLTextAreaElement>; // es para definir el tipo de dato o de evento que se lleva a cabo en el handle input o textarea
+
+// funcion para manejar los cambios en los campos de un Form (input o textarea)
+	const handleInputChange = (e: InputChange) => {
+		setVideo({ ...video, [e.target.name]: e.target.value });
+	};
+
+    ...video es para decirle que haga una copia del stado del video actual, despues de la coma es lo que vamos a cambiar de este estado
+
+
+
+
+atajos
+    rafce componente funcional con expotarcion y usa el nombre del archivo.tsx 
