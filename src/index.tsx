@@ -1,11 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+
+//COMPONENTS
+import WeatherCards from './components/Weather/WeatherCards';
+import Navbar from './components/Navbar/Navbar';
+import NewCityform from './components/Weather/NewCityform';
+
+//CSS
+import './index.css';
+import 'bootswatch/dist/spacelab/bootstrap.min.css';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<h1>Hola Mundo</h1>
+		<BrowserRouter>
+			<Navbar />
+			<div className='container'>
+				<Switch>
+					<Route exact path='/' component={WeatherCards} />
+					<Route exact path='/new-city' component={NewCityform} />
+				</Switch>
+			</div>
+		</BrowserRouter>
 	</React.StrictMode>,
 	document.getElementById('root')
 );
