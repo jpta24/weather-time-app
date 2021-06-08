@@ -12,10 +12,6 @@ const WeatherCards = () => {
 		const city2 = await WeatherServices.getWeather('Miami');
 		const city3 = await WeatherServices.getWeather('Moscu');
 
-		console.log(city1.data);
-		console.log(city2.data);
-		console.log(city3.data);
-
 		const allWeather: CityWeather[] = [city1.data, city2.data, city3.data];
 
 		setCityWeather(allWeather);

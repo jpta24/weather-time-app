@@ -28,7 +28,7 @@ export interface CityWeather {
 	clouds: {
 		all: number;
 	};
-	dt: string;
+	dt: number;
 	sys: {
 		type: number;
 		id: number;
