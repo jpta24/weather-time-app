@@ -1,4 +1,7 @@
-export interface CityWeather {
+export interface CityWeatherInterface {
+	icon?: string;
+	bgImg?: string;
+	textStyle?: string;
 	coord: {
 		lon: number;
 		lat: number;
@@ -33,8 +36,8 @@ export interface CityWeather {
 		type: number;
 		id: number;
 		country: string;
-		sunrise: string | Date;
-		sunset: string | Date;
+		sunrise: number;
+		sunset: number;
 	};
 	timezone: number;
 	id: number;

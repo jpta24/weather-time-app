@@ -2,19 +2,25 @@ import React, { useEffect, useState } from 'react';
 import WeatherCard from './WeatherCard';
 import * as WeatherServices from './WeatherServices';
 
-import { CityWeather } from './CityWeatherInterface';
+import { CityWeatherInterface } from './CityWeatherInterface';
 
 const WeatherCards = () => {
-	const [CityWeather, setCityWeather] = useState<CityWeather[]>([]);
+	const [CitiesWeather, setCitiesWeather] = useState<CityWeatherInterface[]>(
+		[]
+	);
 
 	const loadWeather = async () => {
 		const city1 = await WeatherServices.getWeather('Berlin');
 		const city2 = await WeatherServices.getWeather('Miami');
-		const city3 = await WeatherServices.getWeather('Moscu');
+		const city3 = await WeatherServices.getWeather('Buenos Aires');
 
-		const allWeather: CityWeather[] = [city1.data, city2.data, city3.data];
+		const allWeather: CityWeatherInterface[] = [
+			city1.data,
+			city2.data,
+			city3.data,
+		];
 
-		setCityWeather(allWeather);
+		setCitiesWeather(allWeather);
 	};
 
 	useEffect(() => {
@@ -23,7 +29,7 @@ const WeatherCards = () => {
 
 	return (
 		<div className='row'>
-			{CityWeather.map((eachCity: CityWeather) => {
+			{CitiesWeather.map((eachCity: CityWeatherInterface) => {
 				return (
 					<WeatherCard
 						eachCity={eachCity}
