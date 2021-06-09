@@ -13,8 +13,10 @@ const WeatherCard = ({ eachCity, loadWeather }: Props) => {
 	console.log(newEachCity);
 
 	return (
-		<div className='col-md-4 py-5'>
-			<div className='card card-body text-dark text-center mx-5'>
+		<div className='col-md-4 py-5 overflow animate__animated animate__fadeInUp'>
+			<div
+				className={`card card-body text-center mx-5 cardStyle cardx ${newEachCity.bgImg} ${newEachCity.textStyle}`}
+			>
 				<h1
 					className='mx-auto font-weight-bold align-items-center'
 					style={{ height: '100px' }}
@@ -33,7 +35,7 @@ const WeatherCard = ({ eachCity, loadWeather }: Props) => {
 					)}
 				</div>
 
-				<h4 className='py3 mx-auto'>{eachCity.weather[0].description}</h4>
+				<h3 className='py3 mx-auto'>{eachCity.weather[0].description}</h3>
 			</div>
 		</div>
 	);

@@ -12,7 +12,7 @@ const WeatherCards = () => {
 	const loadWeather = async () => {
 		const city1 = await WeatherServices.getWeather('Berlin');
 		const city2 = await WeatherServices.getWeather('Miami');
-		const city3 = await WeatherServices.getWeather('Buenos Aires');
+		const city3 = await WeatherServices.getWeather('Tokio');
 
 		const allWeather: CityWeatherInterface[] = [
 			city1.data,

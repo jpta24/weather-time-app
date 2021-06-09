@@ -12,12 +12,13 @@ import NewCityform from './components/Weather/NewCityform';
 import './index.css';
 import 'bootswatch/dist/spacelab/bootstrap.min.css';
 import 'weather-icons/css/weather-icons.css';
+import 'animate.css/animate.min.css';
 
 ReactDOM.render(
 	<React.StrictMode>
 		<BrowserRouter>
 			<Navbar />
-			<div className='container'>
+			<div className='container cont2'>
 				<Switch>
 					<Route exact path='/' component={WeatherCards} />
 					<Route exact path='/new-city' component={NewCityform} />

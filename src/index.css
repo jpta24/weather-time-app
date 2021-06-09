@@ -1,0 +1,130 @@
+.cont2 {
+	background: url(./img/kisspng-desktop-wallpaper-white-pattern-minimalist-wallpaper-geometric-5b4595b1345be1.5300810515312869612145.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.cardStyle {
+	border-radius: 1.25em !important;
+	-webkit-border-radius: 1.25em !important;
+	-moz-border-radius: 1.25em !important;
+	-ms-border-radius: 1.25em !important;
+	-o-border-radius: 1.25em !important;
+	border: 1px solid black !important;
+	transition: all 0.2s ease-in-out !important;
+	-webkit-transition: all 0.2s ease-in-out !important;
+	-moz-transition: all 0.2s ease-in-out !important;
+	-ms-transition: all 0.2s ease-in-out !important;
+	-o-transition: all 0.2s ease-in-out !important;
+}
+
+.cardx:hover {
+	box-shadow: 5px 10px 20px 1px rgb(34, 34, 34) !important;
+	transition: all 0.3s linear !important;
+	-webkit-transition: all 0.3s linear !important;
+	-moz-transition: all 0.3s linear !important;
+	-ms-transition: all 0.3s linear !important;
+	-o-transition: all 0.3s linear !important;
+	transform: scale(1.05);
+	-webkit-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	-o-transform: scale(1.05);
+}
+
+.overflow {
+	overflow: hidden;
+}
+
+.dark {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif !important;
+	-webkit-font-smoothing: antialiased !important;
+	-moz-osx-font-smoothing: grayscale !important;
+	color: rgb(8, 8, 8) !important;
+	-webkit-text-stroke: 1px rgb(190, 187, 187);
+}
+
+.light {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif !important;
+	-webkit-font-smoothing: antialiased !important;
+	-moz-osx-font-smoothing: grayscale !important;
+	-webkit-text-stroke: 2px rgb(12, 12, 12);
+	color: rgb(190, 187, 187) !important;
+}
+
+.bgtsd {
+	background: url(./img/weather/thunderstorm_day.png);
+	background-size: cover;
+}
+
+.bgtsn {
+	background: url(./img/weather/thunderstorm_night.png);
+	background-size: cover;
+}
+
+.bgdd {
+	background: url(./img/weather/sleet_day.png);
+	background-size: cover;
+}
+
+.bgdn {
+	background: url(./img/weather/sleet_night.png);
+	background-size: cover;
+}
+
+.bgrd {
+	background: url(./img/weather/rain_day.png);
+	background-size: cover;
+}
+
+.bgrn {
+	background: url(./img/weather/rain_night.png);
+	background-size: cover;
+}
+
+.bgsd {
+	background: url(./img/weather/snow_day.png);
+	background-size: cover;
+}
+
+.bgsn {
+	background: url(./img/weather/snow_night.png);
+	background-size: cover;
+}
+
+.bgfd {
+	background: url(./img/weather/fog_day.png);
+	background-size: cover;
+}
+
+.bgfn {
+	background: url(./img/weather/fog_night.png);
+	background-size: cover;
+}
+
+.bgsu {
+	background: url(./img/weather/sunny_day.png);
+	background-size: cover;
+
+	color: rgb(39, 38, 38);
+	text-shadow: rgb(202, 200, 200);
+}
+
+.bgmn {
+	background: url(./img/weather/moon_night.png);
+	background-size: cover;
+}
+
+.bgcd {
+	background: url(./img/weather/cloudy_day.png);
+	background-size: cover;
+}
+
+.bgcn {
+	background: url(./img/weather/cloudy_night.png);
+	background-size: cover;
+}

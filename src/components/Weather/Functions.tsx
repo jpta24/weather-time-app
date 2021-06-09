@@ -61,8 +61,29 @@ export function getWeatherIcon(eachCity: CityWeatherInterface) {
 		rain_night: 'wi-night-rain',
 		snow_night: 'wi-night-snow',
 		fog_night: 'wi-night-fog',
-		sunny_night: 'wi-moon-first-quarter',
+		sunny_night: 'wi-moon-waxing-crescent-4',
 		clouds_night: 'wi-night-cloudy',
+	};
+
+	const bgImg = {
+		thunderstorm_day: 'bgtsd',
+		drizzle_day: 'bgsd',
+		rain_day: 'bgrd',
+		snow_day: 'bgsn',
+		fog_day: 'bgfd',
+		sunny_day: 'bgsu',
+		clouds_day: 'bgcd',
+		thunderstorm_night: 'bgtsn',
+		drizzle_night: 'bgsn',
+		rain_night: 'bgrn',
+		snow_night: 'bgsn',
+		fog_night: 'bgfn',
+		sunny_night: 'bgmn',
+		clouds_night: 'bgcn',
+	};
+	const textStyle = {
+		dark: 'dark',
+		light: 'light',
 	};
 	let day = false;
 	if (eachCity.dt > eachCity.sys.sunrise && eachCity.dt < eachCity.sys.sunset) {
@@ -76,8 +97,8 @@ export function getWeatherIcon(eachCity: CityWeatherInterface) {
 			eachCity = {
 				...eachCity,
 				icon: weatherIcons.thunderstorm_day,
-				bgImg: '',
-				textStyle: '',
+				bgImg: bgImg.thunderstorm_day,
+				textStyle: textStyle.light,
 			};
 			break;
 
@@ -87,8 +108,8 @@ export function getWeatherIcon(eachCity: CityWeatherInterface) {
 			eachCity = {
 				...eachCity,
 				icon: weatherIcons.thunderstorm_night,
-				bgImg: '',
-				textStyle: '',
+				bgImg: bgImg.thunderstorm_night,
+				textStyle: textStyle.light,
 			};
 			break;
 
@@ -98,8 +119,8 @@ export function getWeatherIcon(eachCity: CityWeatherInterface) {
 			eachCity = {
 				...eachCity,
 				icon: weatherIcons.drizzle_day,
-				bgImg: '',
-				textStyle: '',
+				bgImg: bgImg.drizzle_day,
+				textStyle: textStyle.dark,
 			};
 			break;
 
@@ -109,8 +130,8 @@ export function getWeatherIcon(eachCity: CityWeatherInterface) {
 			eachCity = {
 				...eachCity,
 				icon: weatherIcons.drizzle_night,
-				bgImg: '',
-				textStyle: '',
+				bgImg: bgImg.drizzle_night,
+				textStyle: textStyle.light,
 			};
 			break;
 
@@ -120,8 +141,8 @@ export function getWeatherIcon(eachCity: CityWeatherInterface) {
 			eachCity = {
 				...eachCity,
 				icon: weatherIcons.rain_day,
-				bgImg: '',
-				textStyle: '',
+				bgImg: bgImg.rain_day,
+				textStyle: textStyle.light,
 			};
 			break;
 
@@ -131,8 +152,8 @@ export function getWeatherIcon(eachCity: CityWeatherInterface) {
 			eachCity = {
 				...eachCity,
 				icon: weatherIcons.rain_night,
-				bgImg: '',
-				textStyle: '',
+				bgImg: bgImg.rain_night,
+				textStyle: textStyle.light,
 			};
 			break;
 
@@ -142,8 +163,8 @@ export function getWeatherIcon(eachCity: CityWeatherInterface) {
 			eachCity = {
 				...eachCity,
 				icon: weatherIcons.snow_day,
-				bgImg: '',
-				textStyle: '',
+				bgImg: bgImg.snow_day,
+				textStyle: textStyle.dark,
 			};
 			break;
 
@@ -153,8 +174,8 @@ export function getWeatherIcon(eachCity: CityWeatherInterface) {
 			eachCity = {
 				...eachCity,
 				icon: weatherIcons.snow_night,
-				bgImg: '',
-				textStyle: '',
+				bgImg: bgImg.snow_night,
+				textStyle: textStyle.dark,
 			};
 			break;
 
@@ -164,8 +185,8 @@ export function getWeatherIcon(eachCity: CityWeatherInterface) {
 			eachCity = {
 				...eachCity,
 				icon: weatherIcons.fog_day,
-				bgImg: '',
-				textStyle: '',
+				bgImg: bgImg.fog_day,
+				textStyle: textStyle.light,
 			};
 			break;
 
@@ -175,8 +196,8 @@ export function getWeatherIcon(eachCity: CityWeatherInterface) {
 			eachCity = {
 				...eachCity,
 				icon: weatherIcons.fog_night,
-				bgImg: '',
-				textStyle: '',
+				bgImg: bgImg.fog_night,
+				textStyle: textStyle.light,
 			};
 			break;
 
@@ -184,8 +205,8 @@ export function getWeatherIcon(eachCity: CityWeatherInterface) {
 			eachCity = {
 				...eachCity,
 				icon: weatherIcons.sunny_day,
-				bgImg: '',
-				textStyle: '',
+				bgImg: bgImg.sunny_day,
+				textStyle: textStyle.dark,
 			};
 			break;
 
@@ -193,8 +214,8 @@ export function getWeatherIcon(eachCity: CityWeatherInterface) {
 			eachCity = {
 				...eachCity,
 				icon: weatherIcons.sunny_night,
-				bgImg: '',
-				textStyle: '',
+				bgImg: bgImg.sunny_night,
+				textStyle: textStyle.light,
 			};
 			break;
 
@@ -204,8 +225,8 @@ export function getWeatherIcon(eachCity: CityWeatherInterface) {
 			eachCity = {
 				...eachCity,
 				icon: weatherIcons.clouds_day,
-				bgImg: '',
-				textStyle: '',
+				bgImg: bgImg.clouds_day,
+				textStyle: textStyle.dark,
 			};
 			break;
 
@@ -215,8 +236,8 @@ export function getWeatherIcon(eachCity: CityWeatherInterface) {
 			eachCity = {
 				...eachCity,
 				icon: weatherIcons.clouds_night,
-				bgImg: '',
-				textStyle: '',
+				bgImg: bgImg.clouds_night,
+				textStyle: textStyle.light,
 			};
 			break;
 
