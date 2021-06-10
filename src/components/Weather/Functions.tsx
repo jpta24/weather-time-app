@@ -20,30 +20,18 @@ export function getDateGMT(timezone: number) {
 	const localDate = new Date(date.getTime() + timeZoneLocal + timeZoneCity);
 	const hours = localDate.getHours();
 	const minutes = localDate.getMinutes();
-	if (hours < 12 && minutes < 10) {
-		return (
-			<h3 className='px-2 mx-auto'>
-				{hours}:0{minutes} am
-			</h3>
-		);
+	if (hours === 0 && minutes < 10) {
+		return `12:0${minutes} am`;
+	} else if (hours === 0 && minutes >= 10) {
+		return `12:${minutes} am`;
+	} else if (hours < 12 && minutes < 10) {
+		return `${hours}:0${minutes} am`;
 	} else if (hours < 12 && minutes >= 10) {
-		return (
-			<h3 className='px-2 mx-auto'>
-				{hours}:{minutes} am
-			</h3>
-		);
+		return `${hours}:${minutes} am`;
 	} else if (hours >= 12 && minutes < 10) {
-		return (
-			<h3 className='px-2 mx-auto'>
-				{hours - 12}:0{minutes} pm
-			</h3>
-		);
+		return `${hours - 12}:0${minutes} pm`;
 	} else {
-		return (
-			<h3 className='px-2 mx-auto'>
-				{hours - 12}:{minutes} pm
-			</h3>
-		);
+		return `${hours - 12}:${minutes} pm`;
 	}
 }
 

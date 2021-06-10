@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { CityWeatherInterface } from './CityWeatherInterface';
 import { minMaxTemp, roundTemp, getDateGMT, getWeatherIcon } from './Functions';
 
@@ -8,9 +8,16 @@ interface Props {
 }
 
 const WeatherCard = ({ eachCity, loadWeather }: Props) => {
-	const newEachCity = getWeatherIcon(eachCity);
+	const [MinutesTime, setMinutesTime] = useState<string>();
 
-	console.log(newEachCity);
+	useEffect(() => {
+		setInterval(() => {
+			const timeSS = getDateGMT(eachCity.timezone);
+			setMinutesTime(timeSS);
+		}, 1000);
+	}, [eachCity.timezone]);
+
+	const newEachCity = getWeatherIcon(eachCity);
 
 	return (
 		<div className='col-md-4 py-5 overflow animate__animated animate__fadeInUp'>
@@ -23,7 +30,9 @@ const WeatherCard = ({ eachCity, loadWeather }: Props) => {
 				>
 					{eachCity.name}, {eachCity.sys.country}
 				</h1>
-				<h3 className='mx-auto'>{getDateGMT(eachCity.timezone)}</h3>
+				<h3 className='px-2 mx-auto' style={{ height: '35px' }}>
+					{MinutesTime}
+				</h3>
 				<h5 className='py-4 mx-auto'>
 					<i className={`wi ${newEachCity.icon} display-1 mx-auto`}></i>
 				</h5>
