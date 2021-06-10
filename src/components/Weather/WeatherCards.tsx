@@ -28,15 +28,9 @@ const WeatherCards = () => {
 	}, []);
 
 	return (
-		<div className='row'>
+		<div className='row overflow animate__animated animate__fadeInUp'>
 			{CitiesWeather.map((eachCity: CityWeatherInterface) => {
-				return (
-					<WeatherCard
-						eachCity={eachCity}
-						key={eachCity.id}
-						loadWeather={loadWeather}
-					/>
-				);
+				return <WeatherCard eachCity={eachCity} key={eachCity.id} />;
 			})}
 		</div>
 	);

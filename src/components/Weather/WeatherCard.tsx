@@ -4,10 +4,9 @@ import { minMaxTemp, roundTemp, getDateGMT, getWeatherIcon } from './Functions';
 
 interface Props {
 	eachCity: CityWeatherInterface;
-	loadWeather: () => void; // va a recibir nada () y va a devolver nada void
 }
 
-const WeatherCard = ({ eachCity, loadWeather }: Props) => {
+const WeatherCard = ({ eachCity }: Props) => {
 	const [MinutesTime, setMinutesTime] = useState<string>();
 
 	useEffect(() => {
@@ -20,7 +19,7 @@ const WeatherCard = ({ eachCity, loadWeather }: Props) => {
 	const newEachCity = getWeatherIcon(eachCity);
 
 	return (
-		<div className='col-md-4 py-5 overflow animate__animated animate__fadeInUp'>
+		<div className='col-md-4 py-5'>
 			<div
 				className={`card card-body text-center mx-5 cardStyle cardx ${newEachCity.bgImg} ${newEachCity.textStyle}`}
 			>
