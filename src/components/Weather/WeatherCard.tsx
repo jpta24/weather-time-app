@@ -19,7 +19,7 @@ const WeatherCard = ({ eachCity }: Props) => {
 	const newEachCity = getWeatherIcon(eachCity);
 
 	return (
-		<div className='col-md-4 py-5'>
+		<div className='col-md-4 py-4'>
 			<div
 				className={`card card-body text-center mx-5 cardStyle cardx ${newEachCity.bgImg} ${newEachCity.textStyle}`}
 			>
@@ -44,6 +44,14 @@ const WeatherCard = ({ eachCity }: Props) => {
 				</div>
 
 				<h3 className='py3 mx-auto'>{eachCity.weather[0].description}</h3>
+			</div>
+			<div className='row text-center text-dark justify-content-end mt-3'>
+				<span className='col-md-4 offset-md-3 border border-info border-2 spanMI'>
+					More Info
+				</span>
+				<span className='col-md-3 offset-md-3 text-danger mx-5 border border-info border-2 spanMI2'>
+					x
+				</span>
 			</div>
 		</div>
 	);
